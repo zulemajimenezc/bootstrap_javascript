@@ -1,4 +1,4 @@
-const miCheckbox = document.getElementById("exampleCheck1");
+const checkbox = document.getElementById("exampleCheck1");
 const formulario = document.querySelector("#formulario");
 formulario.addEventListener("submit", (e) => {
   console.log("Ejecutando");
@@ -6,11 +6,12 @@ formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const datos = new FormData(formulario);
+  console.log("campo email", datos.get("emailCampo"));
+  console.log("campo contraseña", datos.get("passCampo"));
 
-  if (miCheckbox.checked) {
-    console.log("campo email:", datos.get("emailCampo"));
-    console.log("campo contraseña:", datos.get("passCampo"));
+  if (checkbox.checked) {
     console.log("campo contraseña on");
+    
     }
     formulario.reset();
 });
